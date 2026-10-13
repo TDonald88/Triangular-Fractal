@@ -7,9 +7,10 @@ print("aight")
 AnkersX = np.array([0, 5, 2.5])  # X coordinates of the triangle's vertices
 AnkersY = np.array([0, 0, 4.33])  # Y coordinates of the triangle's vertices
 
+
 rng = np.random.default_rng()
 x = 0
-while x < 100000:
+while x < 10000:
     x = x + 1
     Last_X = AnkersX[-1]
     Last_Y = AnkersY[-1]
@@ -20,11 +21,15 @@ while x < 100000:
     New_Y = (Last_Y + Next_Y) / 2
     AnkersX = np.append(AnkersX, New_X)
     AnkersY = np.append(AnkersY, New_Y)
+    plt.plot(AnkersX, AnkersY, 'bo', markersize = 0.1)  # Plot the triangle
+    #plt.pause(0.001)
 
 
 
-plt.plot(AnkersX, AnkersY, 'bo', markersize = 0.1)  # Plot the triangle
 plt.show()
+
+#plt.plot(AnkersX, AnkersY, 'bo', markersize = 0.1)  # Plot the triangle
+#plt.show()
 
 
 
